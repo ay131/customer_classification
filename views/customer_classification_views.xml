@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="view_customer_classification_form" model="ir.ui.view">
+            <field name="name">customer.classification.form</field>
+            <field name="model">customer.classification</field>
+            <field name="arch" type="xml">
+                <form string="Customer Classification">
+                    <sheet>
+                        <group>
+                            <field name="title"/>
+                            <field name="score"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_customer_classification_tree" model="ir.ui.view">
+            <field name="name">customer.classification.tree</field>
+            <field name="model">customer.classification</field>
+            <field name="arch" type="xml">
+                <tree string="Customer Classification">
+                    <field name="title"/>
+                    <field name="score"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_customer_classification" model="ir.actions.act_window">
+            <field name="name">Customer Classification</field>
+            <field name="res_model">customer.classification</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_customer_classification" name="Customer Classification" parent="contacts.res_partner_menu_config"
+                  action="action_customer_classification"/>
+
+
+    </data>
+
+</odoo>
